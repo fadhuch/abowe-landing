@@ -65,7 +65,7 @@ function App({ navigate }) {
               Welcome to <span className="brand">Abowe</span>
             </h1>
             <p className="hero-subtitle">
-              Designed for calm, built for clarity — we curate tools that make work and life feel better.
+              Designed for calm, built for clarity.<br /> We curate tools that make work and life feel better.
             </p>
             
             {/* Waiting List Form */}
