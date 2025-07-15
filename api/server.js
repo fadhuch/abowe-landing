@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5001
 // Middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['https://www.abowe.ae'] // Replace with your actual domain
+    ? ['http://localhost:3000'] // Replace with your actual domain
     : ['http://localhost:5173', 'http://localhost:3000']
 }))
 app.use(express.json({ limit: '10mb' }))
