@@ -52,7 +52,6 @@ POST /api/waitlist
 Content-Type: application/json
 
 {
-  "name": "John Doe",
   "email": "john@example.com"
 }
 ```
@@ -64,7 +63,6 @@ Success Response:
   "message": "Successfully added to waitlist",
   "data": {
     "id": "687688f663e244ff26fd2609",
-    "name": "John Doe",
     "email": "john@example.com"
   }
 }
@@ -112,6 +110,61 @@ Response:
 }
 ```
 
+### Admin Endpoints
+
+#### Get All Waitlist Entries
+```http
+GET /api/admin/waitlist?page=1&limit=50&sortBy=createdAt&sortOrder=desc
+```
+
+Response:
+```json
+{
+  "success": true,
+  "data": {
+    "entries": [
+      {
+        "_id": "687688f663e244ff26fd2609",
+        "email": "john@example.com",
+        "createdAt": "2025-07-15T16:59:34.985Z",
+        "source": "landing-page",
+        "ipAddress": "192.168.1.1",
+        "userAgent": "Mozilla/5.0..."
+      }
+    ],
+    "pagination": {
+      "currentPage": 1,
+      "totalPages": 1,
+      "totalCount": 1,
+      "hasNextPage": false,
+      "hasPrevPage": false,
+      "limit": 50
+    }
+  }
+}
+```
+
+#### Export Waitlist as CSV
+```http
+GET /api/admin/waitlist/export
+```
+
+Returns CSV file download with headers:
+`Email,Created At,Source,IP Address,User Agent`
+
+#### Delete Waitlist Entry
+```http
+DELETE /api/admin/waitlist/:id
+```
+
+Response:
+```json
+{
+  "success": true,
+  "message": "Entry deleted successfully"
+}
+```
+
 ## 🔧 Configuration
 
 ### API Server Environment Variables (`api/.env`)
@@ -140,7 +193,6 @@ Waitlist entries are stored with:
 ```javascript
 {
   _id: ObjectId,
-  name: String,
   email: String,
   createdAt: Date,
   source: "landing-page",

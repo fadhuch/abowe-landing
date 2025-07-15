@@ -12,6 +12,11 @@ function AdminPage() {
   const [sortBy, setSortBy] = useState('createdAt')
   const [sortOrder, setSortOrder] = useState('desc')
 
+  const goBack = () => {
+    window.history.pushState({}, '', '/')
+    window.location.reload()
+  }
+
   useEffect(() => {
     loadData()
   }, [currentPage, sortBy, sortOrder])
@@ -92,6 +97,11 @@ function AdminPage() {
   return (
     <div className="admin-page">
       <div className="admin-header">
+        <div className="header-top">
+          <button onClick={goBack} className="btn-back">
+            ← Back to Landing
+          </button>
+        </div>
         <h1>Waitlist Admin</h1>
         <div className="admin-stats">
           <div className="stat-card">
