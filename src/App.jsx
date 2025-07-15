@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import apiService from './services/api'
 
-function App() {
+function App({ navigate }) {
   const [email, setEmail] = useState('')
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -55,6 +55,8 @@ function App() {
 
   return (
     <div className="app">
+      
+      
       {/* Hero Section */}
       <section className="hero">
         <div className="container">
