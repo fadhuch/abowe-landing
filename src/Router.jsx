@@ -20,7 +20,7 @@ function Router() {
   }
 
   // Simple routing logic
-  if (currentPath === '/admin') {
+  if (currentPath === '/ashikadmin') {
     return <AdminPage />
   }
 
