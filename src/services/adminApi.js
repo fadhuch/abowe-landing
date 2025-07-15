@@ -2,7 +2,7 @@
 
 class AdminAPIService {
   constructor() {
-    this.baseUrl = import.meta.env.VITE_API_URL || 'https://www.abowe.ae/api'
+    this.baseUrl = import.meta.env.VITE_API_URL || 'https://api.abowe.ae/api'
   }
 
   // Helper method for making API requests
