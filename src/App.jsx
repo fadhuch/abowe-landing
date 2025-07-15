@@ -55,31 +55,6 @@ function App({ navigate }) {
 
   return (
     <div className="app">
-      {/* Admin Link (discrete) */}
-      {navigate && (
-        <div style={{
-          position: 'fixed',
-          top: '20px',
-          left: '20px',
-          zIndex: 1000
-        }}>
-          <button
-            onClick={() => navigate('/ashikadmin')}
-            style={{
-              background: 'rgba(0,0,0,0.1)',
-              border: 'none',
-              padding: '8px 12px',
-              borderRadius: '6px',
-              color: 'white',
-              cursor: 'pointer',
-              fontSize: '12px',
-              opacity: 0.7
-            }}
-          >
-            Admin
-          </button>
-        </div>
-      )}
       
       {/* Hero Section */}
       <section className="hero">
