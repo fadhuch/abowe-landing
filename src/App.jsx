@@ -65,13 +65,12 @@ function App({ navigate }) {
               Welcome to <span className="brand">Abowe</span>
             </h1>
             <p className="hero-subtitle">
-              The future of digital innovation is here. Join thousands of early adopters 
-              who are already experiencing the next generation of technology.
+              Designed for calm, built for clarity — we curate tools that make work and life feel better.
             </p>
             
             {/* Waiting List Form */}
             <div className="waitlist-section">
-              <h2>Join the Waiting List</h2>
+              <h2>Your spot is waiting</h2>
               <p>Be among the first to experience something extraordinary.</p>
               
               {/* Service Status (for development) */}
